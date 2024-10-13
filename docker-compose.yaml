@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  nextjs:
+    build:
+      dockerfile: Dockerfile
+    container_name: iris_missive
+    ports:
+      - '3000:3000'
+    networks:
+      app-bridge: 
+    volumes:
+      - ./:/app:delegated
+    working_dir:
+      "/src"
+    command:
+      "npm run dev"
+
+networks:
+  app-bridge:
+    external: true
