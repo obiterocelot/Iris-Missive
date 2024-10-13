@@ -1,10 +1,15 @@
-const express = require('express')
-const app = express()
-const port = 3000
+import dotenv from 'dotenv';
 
-const postRouter = require("./routes/posts"); //Import routes for "catalog" area of site
+dotenv.config();
 
-app.use("/posts", postRouter);
+import express, { Request, Response } from 'express';
+import postRouter from './routes/posts';
+import userRouter from './routes/users';
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use("/users", userRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello World!')

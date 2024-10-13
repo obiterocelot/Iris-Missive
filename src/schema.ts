@@ -1,4 +1,4 @@
-import { integer, pgTable, serial, text, timestamp, uuid } from 'drizzle-orm/pg-core';
+import { pgTable, serial, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm/sql';
 
 export const usersTable = pgTable('users_table', {
@@ -18,8 +18,3 @@ export const postsTable = pgTable('posts_table', {
         .notNull()
         .$onUpdate(() => new Date()),
 });
-
-export type InsertUser = typeof usersTable.$inferInsert;
-export type SelectUser = typeof usersTable.$inferSelect;
-export type InsertPost = typeof postsTable.$inferInsert;
-export type SelectPost = typeof postsTable.$inferSelect;

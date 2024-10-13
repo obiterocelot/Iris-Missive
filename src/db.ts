@@ -8,6 +8,4 @@ if (!process.env.DATABASE_URL) {
 
 const connectionString = process.env.DATABASE_URL;
 const client = postgres(connectionString);
-const db = drizzle(client, { schema });
-
-export default db;
+export const db = drizzle(client, { schema });
