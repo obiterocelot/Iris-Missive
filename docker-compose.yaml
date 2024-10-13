@@ -10,7 +10,7 @@ services:
     networks:
       app-bridge: 
     volumes:
-      - ./:/app:delegated
+      - ./:/src:delegated
     working_dir:
       "/src"
     command:

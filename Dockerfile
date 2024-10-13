@@ -2,8 +2,6 @@ FROM ubuntu:24.04
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y postgresql-16 nodejs npm
 
-WORKDIR /app
-
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 
