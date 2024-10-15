@@ -9,7 +9,8 @@ import userRouter from './routes/users';
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use("/users", userRouter);
+app.use(userRouter);
+app.use(postRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello World!')

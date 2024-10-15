@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { getUser } from '../userController'; // Adjust the import based on your folder structure
-import { db } from '../../db'; // Mock your db instance here
-import { usersTable } from '../../schema'; // Adjust as needed
+import { getUser } from '../userController';
+import { db } from '../../db';
+import { usersTable } from '../../schema';
 
 jest.mock('../../db'); // Mock the database module
 
