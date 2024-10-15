@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from 'react'
 
-function App() {
+type Post = {
+  id: number,
+  userId: string,
+  title?: string,
+  content?: string,
+  createdAt?: Date,
+  updatedAt?: Date,
+}
 
-  const [backendData, setBackendData] = useState([{}])
+function App(): JSX.Element {
+
+  const [backendData, setBackendData] = useState<Post[]>([])
 
   useEffect(() => {
     fetch('/posts/').then(
